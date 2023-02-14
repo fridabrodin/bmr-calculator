@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer type="text/javascript" src="script/index.js"></script>
+    <title>BMR Calculator</title>
+    <meta name="description" content="A Starter Project with some basic files" />
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <div class="form-container">
+        <h1>Calculate your BMR</h1>
+        <p>BMR (Basal Metabolic Rate) is an expression for how much energy (kcal) your body uses in rest mode. That is, how much energy your body's organs need to function correctly.</p>
+
+        <form id="bmr-calculator">
+            <h2>Imformation about you</h2>
+            <div class="options-container">
+
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female">Female</label>
+
+            </div>
+
+
+            <div class="input-container">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" required>
+            </div>
+
+            <div class="input-container">
+                    <label for="height">Height (cm)</label>
+                    <input type="number" id="height" required>
+            </div>
+
+            <div class="input-container">
+                    <label for="weight">Weight (kg)</label>
+                    <input type="number" id="weight" required>
+            </div>
+
+
+            <button id="bmr-submit-button" type="submit">Calculate BMR</button>
+
+        </form>
+
+
+        <div id="bmr-result">
+        </div>
+
+    </div>
+
+
+</div>
+
+</body>
+
+</html>
