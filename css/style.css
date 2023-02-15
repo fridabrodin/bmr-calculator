@@ -17,7 +17,7 @@ button {
     text-align: center;
     font-weight: 400;
     padding: 12px 18px;
-    border-radius: 6px;
+    border-radius: 8px;
     border: unset;
     cursor: pointer;
 }
@@ -47,11 +47,10 @@ label {
    ===================== */
 
 .form-container {
-    max-width: 500px;
+    width: 650px;
     margin: 60px auto 0;
     background-color: #fff;
-    padding: 32px 32px 48px 32px;
-    width: 60%;
+    padding: 45px 60px 60px 60px;
     box-sizing: border-box;
     border-radius: 16px;
 }
@@ -89,7 +88,7 @@ input::-webkit-inner-spin-button {
 
 
 /* =====================
-   RADIO BUTTONS
+   RADIO BUTTONS / OPTIONS CONTAINER
    ===================== */
 
 .options-container label {
@@ -153,6 +152,48 @@ input[type=radio] {
     position: absolute;
 }
 
+.options-container input[type=radio]:focus + label {
+    border: 2px solid blue;
+}
+
+.options-container img {
+    width: 25px;
+    height: auto;
+}
+
+
+
+
+/* =====================
+   ERROR MESSAGE
+   ===================== */
+
+   .error-message-container {
+       color: #e92828;
+       align-items: center;
+       gap: 4px;
+       display: none;
+   }
+
+   .error-message-container img {
+       width: 26px;
+       height: auto;
+   }
+
+   .error-message-container.OPEN {
+    display: flex;
+}
+
+
+/* =====================
+   SUBMIT BUTTON
+   ===================== */
+
+   .submit-button {
+    text-align: center;
+    margin: 40px auto 0;
+   }
+
 
 
 /* =====================
@@ -182,6 +223,23 @@ input[type=radio] {
 }
 
 
+
+/* =====================
+   NAVIGATION LINKS
+   ===================== */
+
+.navigation-links {
+    text-align: center;
+    margin: 24px auto 100px;
+}   
+
+.navigation-links a {
+    text-decoration: none;
+    color: #000;
+}   
+
+
+
 /* =====================
    RESPONSIVENESS
    ===================== */
@@ -195,6 +253,7 @@ input[type=radio] {
 
     .form-container {
         width: 100%;
+        border-radius: unset;
     }
 
 
