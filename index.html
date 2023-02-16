@@ -15,21 +15,26 @@
     <div class="wrapper">
 
         <div class="form-container">
+
             <h1>Calculate your BMR</h1>
             <p>BMR (Basal Metabolic Rate) is an expression for how much energy (kcal) your body uses in rest mode. That
                 is, how much energy your body's organs need to function correctly.</p>
 
             <form id="bmr-calculator">
+
                 <h2>Who are you?</h2>
+
                 <div class="options-container">
                     <input type="radio" id="male" name="gender" value="male">
                     <label for="male">Male</label>
 
                     <input type="radio" id="female" name="gender" value="female">
                     <label for="female">Female</label>
-                    <div class="error-message"></div>
-                </div>
 
+                    <div class="error-message-container gender">
+                        <img src="../images/error.png"><span>Please select an option</span>
+                    </div>
+                </div>
 
                 <div class="input-container">
                     <label for="age">Age</label>
@@ -46,7 +51,6 @@
                     <input type="number" id="weight" required>
                 </div>
 
-
                 <div class="submit-button">
                     <button type="submit">Calculate BMR</button>
                 </div>
@@ -59,9 +63,8 @@
         </div>
 
         <div class="navigation-links">
-            <a href="html/calorie-counter.html">Calories</a>
+            <a href="html/calorie-counter.html">Calorie Counter</a>
         </div>
-
 
     </div>
 

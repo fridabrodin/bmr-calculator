@@ -5,10 +5,12 @@ const bmrForm = document.querySelector("#bmr-calculator");
 bmrForm.addEventListener("submit", calculateCalories);
 
 function calculateCalories (event) {
+
     event.preventDefault();
 
     const activity = document.querySelector('input[name="activity"]:checked');
     const gender = document.querySelector('input[name="gender"]:checked');
+
     
     // Error handling
 
@@ -34,6 +36,7 @@ function calculateCalories (event) {
         return;
 
     } 
+
 
     // Check activity rate
     
@@ -68,6 +71,7 @@ function calculateCalories (event) {
 
     } 
 
+
     // Remove old results if there is any
 
     const resultContainer = document.querySelector("#bmr-result");
@@ -76,7 +80,8 @@ function calculateCalories (event) {
         resultContainer.children[0].remove(); 
     }
 
-    // Calculate based on gender, weight, age and activity
+
+    // Get the gender value¨
 
     let genderValue;
 
@@ -106,6 +111,5 @@ function calculateCalories (event) {
 
     heading.innerHTML = "Calorie intake";
     paragraph.innerHTML = "Your daily calorie need is " + BMR * activityRate + " kcal.";
-
 
 }

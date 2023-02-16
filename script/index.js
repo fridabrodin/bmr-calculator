@@ -5,53 +5,65 @@ const bmrForm = document.querySelector("#bmr-calculator");
 bmrForm.addEventListener("submit", calculateBMR);
 
 
-function calculateBMR(event) {
+function calculateBMR (event) {
+
     event.preventDefault();
 
     const gender = document.querySelector('input[name="gender"]:checked');
-    const age = document.querySelector("#age").value;
-    const weight = document.querySelector("#weight").value;
-    const height = document.querySelector("#height").value;
-    const resultContainer = document.querySelector("#bmr-result");
-    const errorMessage = document.querySelector(".error-message");  
+    
 
+    // Error handling
+
+    const errorMessage = document.querySelector(".error-message-container");
+
+    if (gender == null) {
+
+        errorMessage.classList.add("OPEN");
+        return;
+
+    } 
+
+
+    // Remove old results if there is any
+
+    const resultContainer = document.querySelector("#bmr-result");
 
     if (resultContainer.children.length === 1) {      
         resultContainer.children[0].remove(); 
     }
 
-    if (gender == null) {          
-        
-        errorMessage.innerHTML = "Please select an option.";
 
-    } else if (gender.value == "female") {
+    // Get the gender value
 
-        let BMR = 10 * weight + 6.25 * height - 5 * age - 161;
-        errorMessage.innerHTML = "";
+    let genderValue;
 
-        resultContainer.classList.add("OPEN");
-        let div = resultContainer.appendChild(document.createElement('div'));
-        let heading = div.appendChild(document.createElement('h2'));
-        let paragraph = div.appendChild(document.createElement('p'));
+    if (gender.value == "female") {
 
-        heading.innerHTML = "Your BMR";
-        paragraph.innerHTML = "Your BMR is " + BMR + " kcal.";
-        
+        errorMessage.classList.remove("OPEN");
+        genderValue = - 161;     
 
     } else if (gender.value == "male") {
 
-        let BMR = 10 * weight + 6.25 * height - 5 * age + 5;
-        errorMessage.innerHTML = "";
-
-        resultContainer.classList.add("OPEN");
-        let div = resultContainer.appendChild(document.createElement('div'));
-        let heading = div.appendChild(document.createElement('h2'));
-        let paragraph = div.appendChild(document.createElement('p'));
-
-        heading.innerHTML = "Your BMR";
-        paragraph.innerHTML = "Your BMR is " + BMR + " kcal.";
+        errorMessage.classList.remove("OPEN");
+        genderValue = + 5;
 
     } 
 
+
+    // Calculate based on gender, weight and age
+
+    const age = document.querySelector("#age").value;
+    const weight = document.querySelector("#weight").value;
+    const height = document.querySelector("#height").value;
+
+    let BMR = 10 * weight + 6.25 * height - 5 * age + genderValue;
+
+    resultContainer.classList.add("OPEN");
+    let div = resultContainer.appendChild(document.createElement("div"));
+    let heading = div.appendChild(document.createElement("h2"));
+    let paragraph = div.appendChild(document.createElement("p"));
+
+    heading.innerHTML = "Your BMR";
+    paragraph.innerHTML = "Your BMR is " + BMR + " kcal.";
 
 }
