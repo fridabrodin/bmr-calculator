@@ -196,7 +196,7 @@ input[type=radio] {
 
 
 /* =====================
-   BMR RESULTS
+   RESULTS
    ===================== */
 
 #bmr-result {
@@ -221,6 +221,14 @@ input[type=radio] {
     background-position: left center;
 }
 
+.goal-weight-time__date {
+    font-weight: bold;
+}
+
+.goal-weight-time__information {
+    font-size: 13px;
+}
+
 
 
 /* =====================
@@ -228,14 +236,17 @@ input[type=radio] {
    ===================== */
 
 .navigation-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     text-align: center;
     margin: 24px auto 100px;
-}   
+}
 
 .navigation-links a {
     text-decoration: none;
     color: #000;
-}   
+}
 
 
 

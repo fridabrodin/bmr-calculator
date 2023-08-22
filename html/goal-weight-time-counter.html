@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script defer type="text/javascript" src="../script/goal-weight-counter.js"></script>
+    <title>When can you reach your goal weight?</title>
+    <meta name="description" content="A Starter Project with some basic files" />
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="form-container">
+            <h1>Reach your goal weight</h1>
+            <p>Calculate when you can reach your goal weight.</p>
+
+            <form id="bmr-calculator">
+                <h2>Who are you?</h2>
+                <div class="options-container">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+
+                    <div class="error-message-container gender">
+                        <img src="../images/error.png"><span>Please select an option</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" required>
+                </div>
+
+                <div class="input-container">
+                    <label for="height">Height (cm)</label>
+                    <input type="number" id="height" required>
+                </div>
+
+                <div class="input-container">
+                    <label for="weight">Weight (kg)</label>
+                    <input type="number" id="weight" required>
+                </div>
+
+                <div class="input-container">
+                    <label for="goal-weight">Goal weight (kg)</label>
+                    <input type="number" id="goal-weight" required>
+                </div>
+
+                <div class="options-container">
+                    <h2>How much do you exercise?</h2>
+                    <input type="radio" id="activity1" name="activity" value="1">
+                    <label for="activity1">Little or no exercise</label>
+
+                    <input type="radio" id="activity2" name="activity" value="2">
+                    <label for="activity2">Light (1-3 times per week)</label>
+
+                    <input type="radio" id="activity3" name="activity" value="3">
+                    <label for="activity3">Medium (3-5 times per week)</label>
+
+                    <input type="radio" id="activity4" name="activity" value="4">
+                    <label for="activity4">Heavy (6-9 times per week)</label>
+
+                    <input type="radio" id="activity5" name="activity" value="5">
+                    <label for="activity5">Very heavy (+10 times per week)</label>
+
+                    <div class="error-message-container activity">
+                        <img src="../images/error.png"><span>Please select an option</span>
+                    </div>
+
+                </div>
+
+                <div class="submit-button">
+                    <button type="submit">Calculate time to goal weight</button>
+                </div>
+
+            </form>
+
+            <div id="bmr-result">
+            </div>
+
+        </div>
+
+        <div class="navigation-links">
+            <a href="../index.html">BMR Calculator</a>
+            <a href="calorie-counter.html">Calorie Counter</a>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
